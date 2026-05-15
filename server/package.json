@@ -20,9 +20,7 @@
 		"jsonwebtoken": "^9.0.3",
 		"mongoose": "^9.6.2",
 		"socket.io": "^4.8.3",
-		"socket.io-client": "^4.8.3"
-	},
-	"devDependencies": {
+		"socket.io-client": "^4.8.3",
 		"@types/bcryptjs": "^3.0.0",
 		"@types/cors": "^2.8.19",
 		"@types/express": "^5.0.6",
@@ -31,5 +29,6 @@
 		"nodemon": "^3.1.14",
 		"ts-node": "^10.9.2",
 		"typescript": "^6.0.3"
-	}
+	},
+	"devDependencies": {}
 }
