@@ -19,7 +19,7 @@ const DashboardPage = () => {
   const [mapReady, setMapReady] = useState(false)
   const [tab, setTab] = useState<Tab>('drivers')
   const [selectedTrip, setSelectedTrip] = useState<Trip | null>(null)
-  const { driverLocations, offlineDrivers } = useSocket(token)
+  const { driverLocations, offlineDrivers, isLive, toggleLive } = useSocket(token)
 
   useEffect(() => {
     Promise.all([fetchAllDrivers(), fetchAllTrips()])
@@ -78,6 +78,12 @@ const DashboardPage = () => {
             <span className="stat-label">Trips</span>
           </div>
         </div>
+		<button
+			onClick={toggleLive}
+			className={`golive-btn ${isLive ? 'live' : ''}`}
+			>
+			{isLive ? '● Live' : '○ Go Live'}
+		</button>
         <div className="dashboard-user">
           <span>{driver?.name}</span>
           <button onClick={logout} className="logout-btn">Sign out</button>
